@@ -1,0 +1,5 @@
+services:
+  cds-demo:
+    image: linuxchina/cds-demo:1.0.0-SNAPSHOT
+    ports:
+      - "8080:8080"
