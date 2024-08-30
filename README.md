@@ -15,4 +15,6 @@ and footprint of Java programs.
   anticipation: https://spring.io/blog/2024/08/29/spring-boot-cds-support-and-project-leyden-anticipation
 * CDS with Spring Framework 6.1: https://spring.io/blog/2023/12/04/cds-with-spring-framework-6-1
 * Spring Framework CDS: https://docs.spring.io/spring-framework/reference/integration/cds.html
+- Efficient Containers with Spring Boot 3, Java 21 and CDS (SpringOne 2024): https://www.youtube.com/watch?v=h5tL8DCOjLI
+
 
