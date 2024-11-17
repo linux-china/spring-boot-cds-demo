@@ -14,9 +14,21 @@ generate-cds: extract
 start-cds: generate-cds
   cd target; java -XX:SharedArchiveFile=application.jsa -jar application/cds-demo.jar
 
+aot-record:
+  java -XX:AOTMode=record -XX:AOTConfiguration=target/app.aotconf -cp target/application/cds-demo.jar org.mvnsearch.HelloWorldApp
+
+aot-generate:
+  curl 'http://localhost:8080/'
+  curl 'http://localhost:8888/actuator/shutdown' -i -X POST
+  sleep 5
+  java -XX:AOTMode=create -XX:AOTConfiguration=target/app.aotconf -XX:AOTCache=target/app.aot -cp target/application/cds-demo.jar
+
+aot-run:
+  java -XX:AOTCache=target/app.aot -cp target/application/cds-demo.jar org.mvnsearch.HelloWorldApp
+
 # Start your application
-start: build
-  java -jar target/cds-demo.jar
+start: extract
+  java -jar target/application/cds-demo.jar
 
 # build docker image with CDS support
 build-image:
